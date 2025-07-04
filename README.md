@@ -1,114 +1,415 @@
-# Shade Agent Template
+# 🤖 AI-Driven Cross-Chain Portfolio Rebalancer
 
-> [!WARNING]  
-> This technology has not yet undergone a formal audit. Use at your own risk. Please conduct your own due diligence and exercise caution before integrating or relying on it in production environments.
+An intelligent agent that automatically rebalances your crypto portfolio across NEAR and Ethereum using natural language intents and cross-chain signatures.
 
-This is a monorepo template for the Shade Agent Stack with all the code and tools for deploying a Shade Agent on NEAR and Phala Cloud.
+## 🌟 Overview
 
-This template is a simple verifiable ETH Price Oracle that pushes prices to an Ethereum contract. 
+This project implements an **AI-powered portfolio management agent** that:
 
-For full instructions on this repository please refer to our [docs](https://docs.near.org/ai/shade-agents/production/production-deploying).
+- 📝 **Accepts natural language intents** ("Make my portfolio more conservative", "Increase DeFi exposure", "Balance across chains")
+- 🧠 **Uses AI to analyze market conditions** and user preferences
+- ⚡ **Executes trades automatically** across NEAR and Ethereum using chain signatures
+- 📊 **Learns from user behavior** to improve future recommendations
+- 🔗 **Operates cross-chain** without requiring manual bridge transactions
 
-## TEE Deployment
+## 🏆 Challenge Submission
 
-These set of instructions will guide you to deploy your Shade Agent within a TEE.
+This project addresses the **"Agentic Internet and Building AI-led Web3 Experiences"** challenge by:
 
-### Configuring the worker agent 
+✅ **AI-driven agent** that processes natural language intents  
+✅ **Cross-chain execution** using NEAR chain signatures  
+✅ **Autonomous operation** with minimal user intervention  
+✅ **On-chain memory** that learns user preferences over time  
+✅ **Working demo** deployed to NEAR testnet  
 
-- Enter the repository and run `yarn` to install the dependencies.
+## 🚀 Features
 
-- Update the `docker:image` and `docker:push` scripts within your `package.json` file to match your repo path.
+### 🎯 Intent-Based Portfolio Management
+- **Natural Language Processing**: Submit intents like "I want a 60% NEAR, 40% ETH portfolio"
+- **Risk-Based Strategies**: "Make it conservative", "Go aggressive", "Follow market trends"
+- **DeFi Integration**: "Maximize yield", "Focus on DeFi tokens"
+- **Cross-Chain Awareness**: "Diversify across chains", "Reduce Ethereum exposure"
 
-- Configure your `.env.development.local` file with the following:
-  - Your NEAR account ID.
-  - The seed phrase for this account.
-  - Set the contract ID to your account ID prefixed with `contract.` (the contract account will be created during deployment, you should not create this before).
+### 🔮 AI-Powered Analysis
+- **Market Sentiment Analysis**: Real-time market condition assessment
+- **Risk Scoring**: Dynamic risk evaluation based on volatility and trends
+- **Strategy Optimization**: AI suggests optimal allocation based on user history
+- **Confidence Scoring**: Each recommendation comes with confidence levels
 
-- Set the exact same variables in your `.env` file.
+### 🌉 Cross-Chain Execution
+- **NEAR ↔ Ethereum**: Seamless trading across both ecosystems
+- **DEX Integration**: REF Finance (NEAR) and Uniswap (Ethereum)
+- **Chain Signatures**: No manual bridging required
+- **Gas Optimization**: Smart routing to minimize transaction costs
 
-- Open Docker Desktop (you don't need to do anything here, it's just to start up Docker).
+### 🧠 Learning & Adaptation
+- **User Preference Learning**: Tracks successful strategies and user feedback
+- **Performance Analytics**: Monitors trade success rates and portfolio performance
+- **Strategy Evolution**: Adapts recommendations based on historical data
+- **Risk Tolerance Calibration**: Fine-tunes suggestions to user comfort level
 
-- Run `yarn docker:image` followed by `yarn docker:push` to build your Docker image.
+## 🏗️ Architecture
 
-- The CLI will print out your `code hash`, which will look something like `sha256:c085606f55354054408f45a9adee8ba4c0a4421d8e3909615b72995b83ad0b84`. You can also check this code hash on Docker Desktop, under the image Id. Take this code hash and update the hash in your [docker-compose.yaml](https://github.com/PiVortex/shade-agent-template/blob/main/docker-compose.yaml#L4) and [utils/deploy-contract.js](https://github.com/PiVortex/shade-agent-template/blob/main/utils/deploy-contract.js#L9).
-
-### Deploying the Agent Contract 
-
-- To build and deploy the agent contract, run `yarn contract:deploy` or `yarn contract:deploy:mac` depending on which system you're using. For deployment on Mac, the script builds a Docker container and installs tools to build the agent contract, since the contract has dependencies that cannot be built on Mac.
-
-- Make sure to keep your account topped up with testnet NEAR. You can get additional NEAR from the [faucet](https://near-faucet.io/) or by asking in our [Dev Group](https://t.me/shadeagents).
-
-### Deploying to Phala
-
-- Make sure you `commit` and `push` your recent changes to GitHub.
-
-- Go to the Phala Cloud dashboard https://cloud.phala.network/dashboard.
-
-- Click deploy > docker-compose.yml > paste in your docker-compose.yaml, and click deploy. You do not need to enter any environment variables here.
-
-- Once the deployment is finished, click on your deployment, then head to the `network tab` and open the endpoint.
-
-Now you can interact with the Shade Agent. 
-
-If you are having problems deploying your Docker image to Phala, make sure that your node version in your [Dockerfile](https://github.com/PiVortex/shade-agent-template/blob/main/Dockerfile#L3) matches the one on your machine.
-
-### Using the Shade Agent
-
-- You will need to first fund the worker agent with a small amount of `testnet NEAR`. This can be done from the NEAR CLI or a testnet wallet. This account needs testnet NEAR to call the agent contract to register and send transactions.
-
-```bash
-near tokens <accountId> send-near <workerAccountId> '1 NEAR' network-config testnet
+```mermaid
+graph TB
+    UI[Web Interface] --> API[API Layer]
+    API --> AI[AI Portfolio Analyzer]
+    API --> Contract[NEAR Smart Contract]
+    
+    AI --> Market[Market Data APIs]
+    AI --> ML[Machine Learning Models]
+    
+    Contract --> Storage[(On-Chain Storage)]
+    Contract --> ChainSig[Chain Signatures]
+    
+    ChainSig --> NEAR[NEAR Protocol]
+    ChainSig --> ETH[Ethereum]
+    
+    NEAR --> REF[REF Finance]
+    ETH --> UNI[Uniswap V3]
+    
+    Storage --> Portfolios[User Portfolios]
+    Storage --> Intents[Rebalance Intents]
+    Storage --> Trades[Trade History]
+    Storage --> Learning[Learning Data]
 ```
 
-- Next, fund the Sepolia account from a wallet. You can get `Sepolia ETH` from this [faucet](https://cloud.google.com/application/web3/faucet/ethereum/sepolia). This account needs Sepolia ETH to call the Ethereum smart contract to update the stored value.
+## 🛠️ Technology Stack
 
-- Then register the worker agent by clicking the step 3 box.
+### Smart Contract (NEAR)
+- **Language**: Rust
+- **Framework**: NEAR SDK 5.x
+- **Features**: Portfolio management, intent processing, cross-chain signatures
+- **Storage**: On-chain user preferences, trade history, learning data
 
-- Now the worker agent is registered, you can click to update the stored price of ETH in the Ethereum smart contract.
+### Backend Services
+- **Runtime**: Node.js/Next.js
+- **AI Engine**: Custom portfolio analyzer with market sentiment analysis
+- **Cross-Chain**: Chain signatures for Ethereum transaction execution
+- **APIs**: REF Finance, Uniswap, market data providers
 
-The RPCs being used are rate-limited, so the agent may throw errors if the update price box is clicked too often.
+### Frontend
+- **Framework**: Next.js + React
+- **Styling**: Modern CSS with responsive design
+- **Wallet**: NEAR Wallet integration
+- **Real-time**: Live portfolio updates and trade monitoring
 
-### Iterative Flow 
+## 📋 Prerequisites
 
-Each time you update the worker code, you need to deploy a new image to Phala Cloud as the code hash will have changed. To do this, follow these steps:
+- Node.js 18+ and npm/yarn
+- Rust and cargo (for contract development)
+- NEAR CLI
+- Git
 
-- Build the new image `yarn docker:image` followed by `yarn docker:push`.
+## 🚀 Quick Start
 
-- Update the stored codehash in your [docker-compose.yaml](https://github.com/PiVortex/shade-agent-template/blob/main/docker-compose.yaml#L4) file and then the code hash (no sha256: prefix) in the agent contract using the NEAR CLI: 
-
+### 1. Clone the Repository
 ```bash
-near contract call-function as-transaction <contractId> approve_codehash json-args '{"codehash": "<yourNewCodeHash>"}' prepaid-gas '100.0 Tgas' attached-deposit '0 NEAR' sign-as <accountId> network-config testnet 
+git clone <repository-url>
+cd shade-agent-template
 ```
 
-- Update your Phala deployment by clicking on the three little dots, clicking update, and pasting your new `docker-compose.yaml` file.
+### 2. Install Dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-If you have made changes to the agent contract, you will need to redeploy the contract with the new hash. Update [utils/deploy-contract.js](https://github.com/PiVortex/shade-agent-template/blob/main/utils/deploy-contract.js#L9) and run `yarn contract:deploy` or `yarn contract:deploy:mac`.
+### 3. Environment Setup
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local` with your configuration:
+```env
+# NEAR Configuration
+NEXT_PUBLIC_contractId=your-contract.testnet
+NEXT_PUBLIC_NEAR_RPC_URL=https://rpc.testnet.near.org
+
+# Ethereum Configuration  
+NEXT_PUBLIC_ETH_RPC_URL=https://sepolia.infura.io/v3/your-key
+NEXT_PUBLIC_ETHEREUM_CHAIN_ID=11155111
+
+# API Keys (optional for enhanced features)
+COINGECKO_API_KEY=your-coingecko-key
+DEFIPULSE_API_KEY=your-defipulse-key
+```
+
+### 4. Deploy the Smart Contract
+```bash
+cd contract
+cargo near build
+near deploy your-contract.testnet target/near/shade_agent.wasm
+near call your-contract.testnet init '{"owner_id": "your-account.testnet"}' --accountId your-account.testnet
+```
+
+### 5. Start the Development Server
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Visit `http://localhost:3000` to see the application.
+
+## 📖 Usage Guide
+
+### Setting Up Your Portfolio
+
+1. **Connect Wallet**: Connect your NEAR wallet
+2. **Set Preferences**: Configure risk tolerance and preferred chains
+3. **Initial Portfolio**: Add your current asset holdings
+
+### Submitting Intents
+
+Use natural language to describe your portfolio goals:
+
+```
+"Make my portfolio 60% NEAR and 40% ETH"
+"I want to be more conservative, increase stable coins"
+"Follow the market trend and adjust accordingly"
+"Focus on DeFi tokens with good yield opportunities"
+"Rebalance across chains to reduce single-chain risk"
+```
+
+### Monitoring Execution
+
+- **Real-time Updates**: Watch trades execute across chains
+- **Transaction Links**: Direct links to block explorers
+- **Performance Metrics**: Track portfolio value and performance
+- **Learning Insights**: See how the AI adapts to your preferences
+
+## 🔧 API Reference
+
+### Smart Contract Methods
+
+#### View Methods
+```rust
+// Get user's portfolio
+get_user_portfolio(user_id: AccountId) -> Vec<PortfolioAsset>
+
+// Get user preferences
+get_user_preferences(user_id: AccountId) -> Option<UserPreferences>
+
+// Get rebalance intent
+get_intent(intent_id: u64) -> Option<RebalanceIntent>
+
+// Get trade execution
+get_trade(trade_id: u64) -> Option<TradeExecution>
+
+// Get market analysis
+get_latest_market_analysis() -> Option<MarketAnalysis>
+
+// Get rebalance suggestions
+get_rebalance_suggestions(user_id: AccountId) -> Vec<String>
+```
+
+#### Change Methods
+```rust
+// Set portfolio assets
+set_portfolio(assets: Vec<PortfolioAsset>)
+
+// Set user preferences
+set_user_preferences(preferences: UserPreferences)
+
+// Submit natural language intent
+submit_intent(intent_text: String, max_slippage: u32, min_trade_size_usd: u128) -> u64
+
+// Execute rebalance (worker only)
+execute_rebalance(intent_id: u64) -> Vec<u64>
+
+// Update trade status (worker only)
+update_trade_status(trade_id: u64, status: String, tx_hash: Option<String>, actual_output: Option<u128>)
+```
+
+### JavaScript API
+
+#### Portfolio Analyzer
+```javascript
+import PortfolioAnalyzer from './utils/ai-portfolio-analyzer.js';
+
+const analyzer = new PortfolioAnalyzer();
+
+// Parse natural language intent
+const result = await analyzer.parseIntent(
+  "Make my portfolio more conservative",
+  currentPortfolio,
+  userPreferences
+);
+
+// Analyze market sentiment
+const sentiment = await analyzer.analyzeMarketSentiment();
+
+// Calculate rebalancing needs
+const actions = analyzer.calculateRebalanceNeeds(
+  currentPortfolio,
+  targetPortfolio,
+  threshold
+);
+```
+
+#### Cross-Chain Trader
+```javascript
+import CrossChainTrader from './utils/cross-chain-trader.js';
+
+const trader = new CrossChainTrader();
+
+// Execute portfolio rebalance
+const results = await trader.executeRebalance(trades, userPreferences);
+
+// Get portfolio balances
+const balances = await trader.getPortfolioBalances(userAddress);
+
+// Get optimal trade route
+const route = await trader.getOptimalRoute(fromAsset, toAsset, amount, fromChain, toChain);
+```
+
+## 🧪 Testing
+
+### Unit Tests
+```bash
+npm test
+# or
+yarn test
+```
+
+### Smart Contract Tests
+```bash
+cd contract
+cargo test
+```
+
+### Integration Tests
+```bash
+npm run test:integration
+```
+
+## 📊 Example Scenarios
+
+### Scenario 1: Conservative Rebalancing
+**Intent**: "I want to be more conservative with my portfolio"
+
+**AI Analysis**:
+- Increases stable coin allocation to 35%
+- Reduces volatile asset exposure
+- Maintains some growth potential with 30% NEAR, 25% ETH
+
+**Execution**:
+- Sells excess NEAR/ETH on respective chains
+- Buys USDC on Ethereum and USDT on NEAR
+- Updates portfolio automatically
+
+### Scenario 2: DeFi Yield Farming
+**Intent**: "Focus on DeFi tokens with good yield opportunities"
+
+**AI Analysis**:
+- Allocates 20% to REF token for DEX rewards
+- 15% to AURORA for ecosystem growth
+- Maintains base allocation in NEAR/ETH
+- 15% stable coins for liquidity provision
+
+**Execution**:
+- Swaps assets on REF Finance and Uniswap
+- Optimizes for yield-generating positions
+- Monitors APY changes for future rebalancing
+
+### Scenario 3: Market-Based Strategy
+**Intent**: "Follow market trends and adjust accordingly"
+
+**AI Analysis**:
+- Analyzes current market sentiment (bullish/bearish/neutral)
+- Adjusts risk exposure based on volatility scores
+- Increases growth assets in bull markets
+- Shifts to stable assets in bear markets
+
+**Execution**:
+- Dynamic rebalancing based on market conditions
+- Automatic adjustments without user intervention
+- Learning from market timing success/failure
+
+## 🔒 Security Considerations
+
+### Smart Contract Security
+- **Access Control**: Worker registration with TEE verification
+- **Reentrancy Protection**: Safe state updates
+- **Input Validation**: Comprehensive parameter checking
+- **Upgrade Path**: Controlled contract upgrades
+
+### Cross-Chain Security
+- **Chain Signatures**: Secure key derivation and signing
+- **Transaction Verification**: Multi-step verification process
+- **Slippage Protection**: Maximum slippage limits
+- **Gas Limits**: Reasonable gas limit enforcement
+
+### User Security
+- **Private Key Management**: Never store private keys
+- **Permission Model**: Explicit user consent for trades
+- **Audit Trail**: Complete transaction history
+- **Emergency Controls**: Pause functionality for emergencies
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Workflow
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+### Code Style
+- Follow Rust conventions for smart contracts
+- Use ESLint/Prettier for JavaScript/TypeScript
+- Write comprehensive tests
+- Document new features
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **NEAR Protocol** for the amazing chain signatures technology
+- **REF Finance** for NEAR DEX integration
+- **Uniswap** for Ethereum DEX functionality
+- **Shade Protocol** for TEE infrastructure
+- **OpenAI** for AI/ML inspiration
+
+## 📞 Support
+
+- **Documentation**: [Full docs](./docs/)
+- **Issues**: [GitHub Issues](https://github.com/your-repo/issues)
+- **Discord**: [Community Discord](https://discord.gg/your-discord)
+- **Email**: support@your-project.com
+
+## 🗺️ Roadmap
+
+### Phase 1: Core Features ✅
+- [x] Basic portfolio management
+- [x] Natural language intent processing
+- [x] Cross-chain execution
+- [x] AI-powered analysis
+
+### Phase 2: Enhanced AI 🚧
+- [ ] Advanced market sentiment analysis
+- [ ] Predictive modeling
+- [ ] Risk optimization algorithms
+- [ ] Performance attribution analysis
+
+### Phase 3: Multi-Chain Expansion 📋
+- [ ] Polygon integration
+- [ ] Arbitrum support
+- [ ] Avalanche connectivity
+- [ ] Cross-chain yield farming
+
+### Phase 4: Advanced Features 📋
+- [ ] Options and derivatives
+- [ ] Automated yield farming
+- [ ] Social trading features
+- [ ] Mobile application
 
 ---
 
-## Local Development 
-
-Developing locally is much easier for quickly iterating on and testing your agent. You can test all the flows except for the agent registration and valid agent gating.
-
-- To develop locally, comment out the valid worker agent gating from the `sign_tx` method in the [lib.rs](https://github.com/PiVortex/shade-agent-template/blob/main/contract/src/lib.rs#L70C1-L71C71) file of the agent contract.
-
-```rust
-    pub fn sign_tx(
-        &mut self,
-        payload: Vec<u8>,
-        derivation_path: String,
-        key_version: u32,
-    ) -> Promise {
-        // Comment out this line for local development
-        //self.require_registered_worker();
-
-        // Call the MPC contract to get a signature for the payload
-        ecdsa::get_sig(payload, derivation_path, key_version)
-    }
-```
-
-This means now any account, not just valid worker agents, can call this method and get signatures.
-
-- Next, redeploy your agent contract with `yarn contract:deploy` or `yarn contract:deploy:mac`.
-
-- Now you can run your agent locally `yarn dev`.
+**Built with ❤️ for the NEAR ecosystem and the future of decentralized finance.**
