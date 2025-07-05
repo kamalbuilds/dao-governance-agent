@@ -27,11 +27,10 @@
 
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 0 2rem;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #2d1b69 100%);
+  color: white;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .btn {
@@ -43,12 +42,9 @@
 }
 
 .main {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .footer {
@@ -82,20 +78,21 @@
 }
 
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 3rem;
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1rem;
 }
 
-.title,
 .description {
-  text-align: center;
-}
-
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  color: #a0a0a0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .code {
@@ -226,4 +223,786 @@
 .subtitleLogo {
     height: 2em;
     width: auto;
+}
+
+/* AI Portfolio Rebalancer Styles */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Wallet Section */
+.walletSection {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.connectWallet h3 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.connectWallet p {
+    color: #a0a0a0;
+    margin-bottom: 1.5rem;
+}
+
+.connectBtn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.connectBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.accountInfo {
+    text-align: left;
+}
+
+.accountInfo h3 {
+    color: #10B981;
+    margin-bottom: 1rem;
+}
+
+.accountInfo p {
+    margin: 0.5rem 0;
+    color: #e0e0e0;
+}
+
+.balanceDetails {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.balanceDetails p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.disconnectBtn {
+    background: rgba(239, 68, 68, 0.2);
+    color: #EF4444;
+    border: 1px solid #EF4444;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.disconnectBtn:hover {
+    background: #EF4444;
+    color: white;
+}
+
+/* Stats Section */
+.statsSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.statItem {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.statItem:hover {
+    transform: translateY(-5px);
+}
+
+.statNumber {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.statLabel {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Market Overview */
+.marketOverview {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.marketOverview h3 {
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.marketGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.marketItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.marketItem span:first-child {
+    color: #a0a0a0;
+    font-weight: 500;
+}
+
+.marketItem span:last-child {
+    color: #10B981;
+    font-weight: 600;
+}
+
+.sentiment {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.sentiment.bullish {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10B981;
+}
+
+.sentiment.bearish {
+    background: rgba(239, 68, 68, 0.2);
+    color: #EF4444;
+}
+
+.sentiment.neutral {
+    background: rgba(156, 163, 175, 0.2);
+    color: #9CA3AF;
+}
+
+/* Portfolio Section */
+.portfolioSection {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.sectionHeader h3 {
+    color: #667eea;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.portfolioActions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.portfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.assetCard {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.assetCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.assetHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.assetSymbol {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.assetChain {
+    background: rgba(102, 126, 234, 0.2);
+    color: #667eea;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.assetValue {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #10B981;
+    margin-bottom: 1rem;
+}
+
+.assetAllocation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.assetAllocation span:first-child {
+    color: #a0a0a0;
+}
+
+.assetAllocation span:last-child {
+    color: #667eea;
+}
+
+.allocationBar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.allocationFill {
+    height: 100%;
+    transition: all 0.5s ease;
+    border-radius: 3px;
+}
+
+/* Intent Section */
+.intentSection {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.intentSection h3 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.intentSection p {
+    color: #a0a0a0;
+    margin-bottom: 1.5rem;
+}
+
+.intentInput {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.intentTextarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.3s ease;
+}
+
+.intentTextarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.intentTextarea::placeholder {
+    color: #666;
+}
+
+.quickIntents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.quickIntents button {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quickIntents button:hover {
+    background: rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Buttons */
+.analyzeBtn, .executeBtn, .saveBtn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.analyzeBtn:hover, .executeBtn:hover, .saveBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.analyzeBtn:disabled, .executeBtn:disabled, .saveBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.executeBtn.primary {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+}
+
+.executeBtn.primary:hover {
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+/* Analysis Section */
+.analysisSection {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.analysisSection h3 {
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.onChainBadge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.analysisGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.analysisCard {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.analysisCard h4 {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+
+.strategy, .riskLevel, .healthGrade {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.analysisCard p {
+    color: #e0e0e0;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.reasoning {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.reasoning h4 {
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.reasoning p {
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.targets {
+    margin-bottom: 2rem;
+}
+
+.targets h4 {
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.targetGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.targetItem {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.targetAsset {
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.targetPercentage {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #10B981;
+    margin-bottom: 0.25rem;
+}
+
+.targetChain {
+    font-size: 0.8rem;
+    color: #a0a0a0;
+    text-transform: uppercase;
+}
+
+.gasEstimation {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.gasEstimation h4 {
+    color: #F59E0B;
+    margin-bottom: 1rem;
+}
+
+.gasEstimation p {
+    color: #e0e0e0;
+    margin: 0.5rem 0;
+}
+
+/* Intent History */
+.historySection {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.historySection h3 {
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.intentHistory {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.intentItem {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.intentText {
+    color: #e0e0e0;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.intentMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #a0a0a0;
+}
+
+.intentBadges {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.intentStatus {
+    background: rgba(102, 126, 234, 0.2);
+    color: #667eea;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+
+.onChainBadge {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10B981;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* Preferences Section */
+.preferencesSection {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.preferencesSection h3 {
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.preferencesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.preferenceItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.preferenceItem label {
+    color: #a0a0a0;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.preferenceItem select,
+.preferenceItem input[type="number"] {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 0.75rem;
+    color: white;
+    font-size: 1rem;
+}
+
+.preferenceItem select:focus,
+.preferenceItem input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.preferenceItem input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #667eea;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .portfolioGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .analysisGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .targetGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .preferencesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .marketGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sectionHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .portfolioActions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .intentInput {
+        gap: 0.75rem;
+    }
+
+    .quickIntents {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .marketGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .statsSection {
+        grid-template-columns: 1fr;
+    }
+
+    .intentMeta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #667eea;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Utility Classes */
+.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.error {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
 }

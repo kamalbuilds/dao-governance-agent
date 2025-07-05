@@ -10,9 +10,10 @@ const contractId = process.env.NEXT_PUBLIC_contractId;
 
 class CrossChainTrader {
     constructor() {
-        this.ethereumRpcUrl = process.env.NEXT_PUBLIC_ETH_RPC_URL || "https://sepolia.infura.io/v3/your-key";
+        this.ethereumRpcUrl = process.env.NEXT_PUBLIC_ETH_RPC_URL || "https://eth-sepolia.public.blastapi.io";
         this.nearRpcUrl = process.env.NEXT_PUBLIC_NEAR_RPC_URL || "https://rpc.testnet.near.org";
         
+        call 
         // Contract addresses for different tokens
         this.contracts = {
             ethereum: {
@@ -373,7 +374,7 @@ class CrossChainTrader {
     /**
      * Finalize Ethereum transaction with signature
      */
-    finalizeEthereumTransaction(transaction, signature) {
+    async finalizeEthereumTransaction(transaction, signature) {
         const { Evm } = await import('chainsig.js');
         return Evm.finalizeTransactionSigning({
             transaction,

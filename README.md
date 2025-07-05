@@ -1,415 +1,229 @@
-# 🤖 AI-Driven Cross-Chain Portfolio Rebalancer
+# 🤖 AI Portfolio Rebalancer | NEAR Protocol
 
-An intelligent agent that automatically rebalances your crypto portfolio across NEAR and Ethereum using natural language intents and cross-chain signatures.
+An intelligent, AI-powered cross-chain portfolio rebalancing platform that uses natural language processing to understand user intents and execute sophisticated trading strategies across multiple blockchain networks.
 
-## 🌟 Overview
+## 🌟 Features
 
-This project implements an **AI-powered portfolio management agent** that:
+### 🧠 AI-Powered Intent Processing
+- **Natural Language Understanding**: Describe your portfolio goals in plain English
+- **Smart Strategy Classification**: AI automatically categorizes your intent (conservative, aggressive, DeFi-focused, etc.)
+- **Risk Assessment**: Intelligent risk analysis with confidence scoring
+- **Market Context**: Real-time market sentiment integration
 
-- 📝 **Accepts natural language intents** ("Make my portfolio more conservative", "Increase DeFi exposure", "Balance across chains")
-- 🧠 **Uses AI to analyze market conditions** and user preferences
-- ⚡ **Executes trades automatically** across NEAR and Ethereum using chain signatures
-- 📊 **Learns from user behavior** to improve future recommendations
-- 🔗 **Operates cross-chain** without requiring manual bridge transactions
+### ⛓️ Blockchain Integration
+- **NEAR Protocol Smart Contracts**: On-chain intent storage and execution
+- **Wallet Integration**: Connect your NEAR wallet for seamless transactions
+- **Cross-Chain Support**: Execute trades across Ethereum, NEAR, Polygon, Arbitrum, and Optimism
+- **Gas Optimization**: Intelligent gas estimation and cost optimization
 
-## 🏆 Challenge Submission
+### 📊 Portfolio Management
+- **Real-time Portfolio Tracking**: Monitor your assets across multiple chains
+- **Health Analysis**: Comprehensive portfolio health scoring (A-F grades)
+- **Diversification Metrics**: Advanced risk and diversification analysis
+- **Automated Rebalancing**: Set thresholds for automatic portfolio adjustments
 
-This project addresses the **"Agentic Internet and Building AI-led Web3 Experiences"** challenge by:
-
-✅ **AI-driven agent** that processes natural language intents  
-✅ **Cross-chain execution** using NEAR chain signatures  
-✅ **Autonomous operation** with minimal user intervention  
-✅ **On-chain memory** that learns user preferences over time  
-✅ **Working demo** deployed to NEAR testnet  
-
-## 🚀 Features
-
-### 🎯 Intent-Based Portfolio Management
-- **Natural Language Processing**: Submit intents like "I want a 60% NEAR, 40% ETH portfolio"
-- **Risk-Based Strategies**: "Make it conservative", "Go aggressive", "Follow market trends"
-- **DeFi Integration**: "Maximize yield", "Focus on DeFi tokens"
-- **Cross-Chain Awareness**: "Diversify across chains", "Reduce Ethereum exposure"
-
-### 🔮 AI-Powered Analysis
-- **Market Sentiment Analysis**: Real-time market condition assessment
-- **Risk Scoring**: Dynamic risk evaluation based on volatility and trends
-- **Strategy Optimization**: AI suggests optimal allocation based on user history
-- **Confidence Scoring**: Each recommendation comes with confidence levels
-
-### 🌉 Cross-Chain Execution
-- **NEAR ↔ Ethereum**: Seamless trading across both ecosystems
-- **DEX Integration**: REF Finance (NEAR) and Uniswap (Ethereum)
-- **Chain Signatures**: No manual bridging required
-- **Gas Optimization**: Smart routing to minimize transaction costs
-
-### 🧠 Learning & Adaptation
-- **User Preference Learning**: Tracks successful strategies and user feedback
-- **Performance Analytics**: Monitors trade success rates and portfolio performance
-- **Strategy Evolution**: Adapts recommendations based on historical data
-- **Risk Tolerance Calibration**: Fine-tunes suggestions to user comfort level
-
-## 🏗️ Architecture
-
-```mermaid
-graph TB
-    UI[Web Interface] --> API[API Layer]
-    API --> AI[AI Portfolio Analyzer]
-    API --> Contract[NEAR Smart Contract]
-    
-    AI --> Market[Market Data APIs]
-    AI --> ML[Machine Learning Models]
-    
-    Contract --> Storage[(On-Chain Storage)]
-    Contract --> ChainSig[Chain Signatures]
-    
-    ChainSig --> NEAR[NEAR Protocol]
-    ChainSig --> ETH[Ethereum]
-    
-    NEAR --> REF[REF Finance]
-    ETH --> UNI[Uniswap V3]
-    
-    Storage --> Portfolios[User Portfolios]
-    Storage --> Intents[Rebalance Intents]
-    Storage --> Trades[Trade History]
-    Storage --> Learning[Learning Data]
-```
-
-## 🛠️ Technology Stack
-
-### Smart Contract (NEAR)
-- **Language**: Rust
-- **Framework**: NEAR SDK 5.x
-- **Features**: Portfolio management, intent processing, cross-chain signatures
-- **Storage**: On-chain user preferences, trade history, learning data
-
-### Backend Services
-- **Runtime**: Node.js/Next.js
-- **AI Engine**: Custom portfolio analyzer with market sentiment analysis
-- **Cross-Chain**: Chain signatures for Ethereum transaction execution
-- **APIs**: REF Finance, Uniswap, market data providers
-
-### Frontend
-- **Framework**: Next.js + React
-- **Styling**: Modern CSS with responsive design
-- **Wallet**: NEAR Wallet integration
-- **Real-time**: Live portfolio updates and trade monitoring
-
-## 📋 Prerequisites
-
-- Node.js 18+ and npm/yarn
-- Rust and cargo (for contract development)
-- NEAR CLI
-- Git
+### 💡 User Experience
+- **Interactive Dashboard**: Beautiful, responsive interface with real-time data
+- **Intent History**: Track all your portfolio decisions and outcomes
+- **Quick Actions**: Pre-built intent buttons for common strategies
+- **Preference Learning**: AI learns from your decisions to improve recommendations
 
 ## 🚀 Quick Start
 
-### 1. Clone the Repository
+### Prerequisites
+- [Bun](https://bun.sh/) (recommended) or Node.js 18+
+- NEAR Wallet (for blockchain features)
+- OpenAI API Key (for AI features)
+
+### Installation
+
+1. **Clone and Install**
 ```bash
-git clone <repository-url>
 cd shade-agent-template
+bun install
 ```
 
-### 2. Install Dependencies
+2. **Start Development Server**
 ```bash
-npm install
-# or
-yarn install
+# Easy way - use the provided script
+./start-dev.sh
+
+# Or manually with environment variables
+OPENAI_API_KEY=your_key_here \
+NEXT_PUBLIC_CONTRACT_NAME=dao-aiagent.testnet \
+NEXT_PUBLIC_NETWORK_ID=testnet \
+bun run dev
 ```
 
-### 3. Environment Setup
+3. **Open Your Browser**
+Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🎯 How to Use
+
+### 1. Connect Your Wallet
+- Click "Connect NEAR Wallet" to link your NEAR account
+- This enables on-chain portfolio storage and trade execution
+
+### 2. Set Up Your Portfolio
+- View your current portfolio or use the demo data
+- Click "Save to Blockchain" to store your portfolio on-chain
+- Configure your preferences (risk tolerance, rebalance thresholds, etc.)
+
+### 3. Submit Natural Language Intents
+Try these example intents:
+- "Make my portfolio more conservative"
+- "I want higher returns, increase risk"
+- "Focus on DeFi opportunities"
+- "Diversify across multiple chains"
+- "Reduce my exposure to volatile assets"
+
+### 4. Review AI Analysis
+The AI will provide:
+- Strategy classification and confidence score
+- Risk assessment and timeframe
+- Recommended asset allocations
+- Gas cost estimates
+- Detailed reasoning
+
+### 5. Execute Rebalancing
+- Review the AI's recommendations
+- Click "Execute Rebalance" to implement changes
+- Monitor execution progress in real-time
+- Portfolio updates automatically save to blockchain
+
+## 🏗️ Architecture
+
+### Smart Contract Integration
+- **Contract Address**: `dao-aiagent.testnet`
+- **Network**: NEAR Testnet
+- **Functions**: Portfolio storage, intent processing, trade execution
+
+### AI Pipeline
+1. **Intent Processing**: OpenAI GPT-4o-mini analyzes natural language
+2. **Strategy Generation**: AI determines optimal allocation strategies
+3. **Risk Assessment**: Comprehensive risk scoring and analysis
+4. **Execution Planning**: Step-by-step trade execution planning
+
+### Frontend Stack
+- **Next.js 14**: React framework with server-side rendering
+- **NEAR API JS**: Blockchain integration and wallet connectivity
+- **Modern CSS**: Responsive design with glassmorphism effects
+- **Real-time Updates**: Live portfolio and market data
+
+## 🔧 Configuration
+
+### Environment Variables
 ```bash
-cp .env.example .env.local
-```
-
-Edit `.env.local` with your configuration:
-```env
 # NEAR Configuration
-NEXT_PUBLIC_contractId=your-contract.testnet
-NEXT_PUBLIC_NEAR_RPC_URL=https://rpc.testnet.near.org
+NEXT_PUBLIC_CONTRACT_NAME=dao-aiagent.testnet
+NEXT_PUBLIC_NETWORK_ID=testnet
 
-# Ethereum Configuration  
-NEXT_PUBLIC_ETH_RPC_URL=https://sepolia.infura.io/v3/your-key
-NEXT_PUBLIC_ETHEREUM_CHAIN_ID=11155111
+# OpenAI Configuration
+OPENAI_API_KEY=your_openai_api_key_here
 
-# API Keys (optional for enhanced features)
-COINGECKO_API_KEY=your-coingecko-key
-DEFIPULSE_API_KEY=your-defipulse-key
+# Application Configuration
+NEXT_PUBLIC_APP_NAME=AI Portfolio Rebalancer
+NEXT_PUBLIC_APP_VERSION=1.0.0
 ```
 
-### 4. Deploy the Smart Contract
-```bash
-cd contract
-cargo near build
-near deploy your-contract.testnet target/near/shade_agent.wasm
-near call your-contract.testnet init '{"owner_id": "your-account.testnet"}' --accountId your-account.testnet
-```
+### Supported Networks
+- **NEAR Protocol** (Primary)
+- **Ethereum** (EVM)
+- **Polygon** (EVM)
+- **Arbitrum** (EVM)
+- **Optimism** (EVM)
 
-### 5. Start the Development Server
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 📱 API Endpoints
 
-Visit `http://localhost:3000` to see the application.
+### `/api/analyze-intent`
+Analyzes natural language portfolio intents
+- **Method**: POST
+- **Body**: `{ intent, portfolio, preferences }`
+- **Response**: Strategy classification, risk assessment, recommendations
 
-## 📖 Usage Guide
-
-### Setting Up Your Portfolio
-
-1. **Connect Wallet**: Connect your NEAR wallet
-2. **Set Preferences**: Configure risk tolerance and preferred chains
-3. **Initial Portfolio**: Add your current asset holdings
-
-### Submitting Intents
-
-Use natural language to describe your portfolio goals:
-
-```
-"Make my portfolio 60% NEAR and 40% ETH"
-"I want to be more conservative, increase stable coins"
-"Follow the market trend and adjust accordingly"
-"Focus on DeFi tokens with good yield opportunities"
-"Rebalance across chains to reduce single-chain risk"
-```
-
-### Monitoring Execution
-
-- **Real-time Updates**: Watch trades execute across chains
-- **Transaction Links**: Direct links to block explorers
-- **Performance Metrics**: Track portfolio value and performance
-- **Learning Insights**: See how the AI adapts to your preferences
-
-## 🔧 API Reference
-
-### Smart Contract Methods
-
-#### View Methods
-```rust
-// Get user's portfolio
-get_user_portfolio(user_id: AccountId) -> Vec<PortfolioAsset>
-
-// Get user preferences
-get_user_preferences(user_id: AccountId) -> Option<UserPreferences>
-
-// Get rebalance intent
-get_intent(intent_id: u64) -> Option<RebalanceIntent>
-
-// Get trade execution
-get_trade(trade_id: u64) -> Option<TradeExecution>
-
-// Get market analysis
-get_latest_market_analysis() -> Option<MarketAnalysis>
-
-// Get rebalance suggestions
-get_rebalance_suggestions(user_id: AccountId) -> Vec<String>
-```
-
-#### Change Methods
-```rust
-// Set portfolio assets
-set_portfolio(assets: Vec<PortfolioAsset>)
-
-// Set user preferences
-set_user_preferences(preferences: UserPreferences)
-
-// Submit natural language intent
-submit_intent(intent_text: String, max_slippage: u32, min_trade_size_usd: u128) -> u64
-
-// Execute rebalance (worker only)
-execute_rebalance(intent_id: u64) -> Vec<u64>
-
-// Update trade status (worker only)
-update_trade_status(trade_id: u64, status: String, tx_hash: Option<String>, actual_output: Option<u128>)
-```
-
-### JavaScript API
-
-#### Portfolio Analyzer
-```javascript
-import PortfolioAnalyzer from './utils/ai-portfolio-analyzer.js';
-
-const analyzer = new PortfolioAnalyzer();
-
-// Parse natural language intent
-const result = await analyzer.parseIntent(
-  "Make my portfolio more conservative",
-  currentPortfolio,
-  userPreferences
-);
-
-// Analyze market sentiment
-const sentiment = await analyzer.analyzeMarketSentiment();
-
-// Calculate rebalancing needs
-const actions = analyzer.calculateRebalanceNeeds(
-  currentPortfolio,
-  targetPortfolio,
-  threshold
-);
-```
-
-#### Cross-Chain Trader
-```javascript
-import CrossChainTrader from './utils/cross-chain-trader.js';
-
-const trader = new CrossChainTrader();
-
-// Execute portfolio rebalance
-const results = await trader.executeRebalance(trades, userPreferences);
-
-// Get portfolio balances
-const balances = await trader.getPortfolioBalances(userAddress);
-
-// Get optimal trade route
-const route = await trader.getOptimalRoute(fromAsset, toAsset, amount, fromChain, toChain);
-```
+### `/api/portfolio-health`
+Comprehensive portfolio health analysis
+- **Method**: POST
+- **Body**: `{ portfolio }`
+- **Response**: Health grade, diversification score, risk metrics
 
 ## 🧪 Testing
 
-### Unit Tests
+Run the comprehensive test suite:
 ```bash
-npm test
-# or
-yarn test
+bun run test
 ```
 
-### Smart Contract Tests
-```bash
-cd contract
-cargo test
-```
+Test coverage includes:
+- Natural language intent analysis
+- Portfolio health calculations
+- Strategy generation algorithms
+- Risk assessment accuracy
+- Gas estimation precision
+- Error handling robustness
 
-### Integration Tests
-```bash
-npm run test:integration
-```
+## 🔒 Security
 
-## 📊 Example Scenarios
+- **Non-custodial**: Your assets remain in your wallet
+- **Read-only Analysis**: AI analyzes without accessing private keys
+- **Secure Connections**: All API calls use HTTPS
+- **Smart Contract Auditing**: Contract code is open-source and auditable
 
-### Scenario 1: Conservative Rebalancing
-**Intent**: "I want to be more conservative with my portfolio"
+## 🌐 Supported Assets
 
-**AI Analysis**:
-- Increases stable coin allocation to 35%
-- Reduces volatile asset exposure
-- Maintains some growth potential with 30% NEAR, 25% ETH
+### NEAR Ecosystem
+- NEAR, wNEAR, USDC.e, USDT.e, DAI, wETH, wBTC
 
-**Execution**:
-- Sells excess NEAR/ETH on respective chains
-- Buys USDC on Ethereum and USDT on NEAR
-- Updates portfolio automatically
+### Ethereum Ecosystem
+- ETH, USDC, USDT, DAI, wBTC, LINK, UNI, AAVE, COMP
 
-### Scenario 2: DeFi Yield Farming
-**Intent**: "Focus on DeFi tokens with good yield opportunities"
+### Cross-Chain Assets
+- Automatically detected based on your wallet connections
 
-**AI Analysis**:
-- Allocates 20% to REF token for DEX rewards
-- 15% to AURORA for ecosystem growth
-- Maintains base allocation in NEAR/ETH
-- 15% stable coins for liquidity provision
+## 📈 Advanced Features
 
-**Execution**:
-- Swaps assets on REF Finance and Uniswap
-- Optimizes for yield-generating positions
-- Monitors APY changes for future rebalancing
+### Portfolio Health Scoring
+- **Grade A**: Excellent diversification, low risk
+- **Grade B**: Good balance, moderate risk
+- **Grade C**: Acceptable risk, some concentration
+- **Grade D**: High risk, poor diversification
+- **Grade F**: Dangerous concentration, immediate action needed
 
-### Scenario 3: Market-Based Strategy
-**Intent**: "Follow market trends and adjust accordingly"
-
-**AI Analysis**:
-- Analyzes current market sentiment (bullish/bearish/neutral)
-- Adjusts risk exposure based on volatility scores
-- Increases growth assets in bull markets
-- Shifts to stable assets in bear markets
-
-**Execution**:
-- Dynamic rebalancing based on market conditions
-- Automatic adjustments without user intervention
-- Learning from market timing success/failure
-
-## 🔒 Security Considerations
-
-### Smart Contract Security
-- **Access Control**: Worker registration with TEE verification
-- **Reentrancy Protection**: Safe state updates
-- **Input Validation**: Comprehensive parameter checking
-- **Upgrade Path**: Controlled contract upgrades
-
-### Cross-Chain Security
-- **Chain Signatures**: Secure key derivation and signing
-- **Transaction Verification**: Multi-step verification process
-- **Slippage Protection**: Maximum slippage limits
-- **Gas Limits**: Reasonable gas limit enforcement
-
-### User Security
-- **Private Key Management**: Never store private keys
-- **Permission Model**: Explicit user consent for trades
-- **Audit Trail**: Complete transaction history
-- **Emergency Controls**: Pause functionality for emergencies
+### AI Strategy Types
+- **Conservative**: Focus on stable assets, low volatility
+- **Aggressive**: High-growth potential, higher risk tolerance
+- **DeFi-Focused**: Yield farming and liquidity provision
+- **Cross-Chain**: Diversification across multiple networks
+- **Market-Based**: Responsive to current market conditions
 
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-### Development Workflow
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
-
-### Code Style
-- Follow Rust conventions for smart contracts
-- Use ESLint/Prettier for JavaScript/TypeScript
-- Write comprehensive tests
-- Document new features
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## 🆘 Support
 
-- **NEAR Protocol** for the amazing chain signatures technology
-- **REF Finance** for NEAR DEX integration
-- **Uniswap** for Ethereum DEX functionality
-- **Shade Protocol** for TEE infrastructure
-- **OpenAI** for AI/ML inspiration
+- **Documentation**: Check this README and inline code comments
+- **Issues**: Report bugs via GitHub Issues
+- **Community**: Join our Discord for discussions
+- **Email**: Contact us at support@shade-agent.com
 
-## 📞 Support
+## 🔮 Roadmap
 
-- **Documentation**: [Full docs](./docs/)
-- **Issues**: [GitHub Issues](https://github.com/your-repo/issues)
-- **Discord**: [Community Discord](https://discord.gg/your-discord)
-- **Email**: support@your-project.com
-
-## 🗺️ Roadmap
-
-### Phase 1: Core Features ✅
-- [x] Basic portfolio management
-- [x] Natural language intent processing
-- [x] Cross-chain execution
-- [x] AI-powered analysis
-
-### Phase 2: Enhanced AI 🚧
-- [ ] Advanced market sentiment analysis
-- [ ] Predictive modeling
-- [ ] Risk optimization algorithms
-- [ ] Performance attribution analysis
-
-### Phase 3: Multi-Chain Expansion 📋
-- [ ] Polygon integration
-- [ ] Arbitrum support
-- [ ] Avalanche connectivity
-- [ ] Cross-chain yield farming
-
-### Phase 4: Advanced Features 📋
-- [ ] Options and derivatives
-- [ ] Automated yield farming
+- [ ] Multi-wallet support (MetaMask, WalletConnect)
+- [ ] Advanced DeFi strategies (yield farming, liquidity provision)
+- [ ] Mobile app (React Native)
+- [ ] Institutional features (multi-signature, compliance)
+- [ ] AI model fine-tuning on user feedback
+- [ ] Advanced charting and analytics
 - [ ] Social trading features
-- [ ] Mobile application
+- [ ] Automated dollar-cost averaging
 
 ---
 
-**Built with ❤️ for the NEAR ecosystem and the future of decentralized finance.**
+**Built with ❤️ for the NEAR Protocol "Agentic Internet" Challenge**
+
+*Empowering users to manage their crypto portfolios with AI-driven insights and cross-chain execution capabilities.*
